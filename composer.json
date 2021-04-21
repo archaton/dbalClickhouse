@@ -1,5 +1,5 @@
 {
-    "name": "xeops/dbal-clickhouse",
+    "name": "archaton/dbal-clickhouse",
     "type": "library",
     "description": "Doctrine DBAL driver for ClickHouse",
     "keywords": [
@@ -8,7 +8,7 @@
         "clickhouse",
         "driver"
     ],
-    "homepage": "https://github.com/xeops/dbal-clickhouse",
+    "homepage": "https://github.com/archaton/dbal-clickhouse",
     "license": "MIT",
     "authors": [
         {
