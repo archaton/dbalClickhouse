@@ -115,7 +115,7 @@ class ClickHouseConnection implements Connection, PingableConnection, ServerInfo
      */
     public function beginTransaction()
     {
-        throw new \LogicException('Transactions are not allowed in ClickHouse');
+        // throw new \LogicException('Transactions are not allowed in ClickHouse');
     }
 
     /**
@@ -123,7 +123,7 @@ class ClickHouseConnection implements Connection, PingableConnection, ServerInfo
      */
     public function commit()
     {
-        throw new \LogicException('Transactions are not allowed in ClickHouse');
+        // throw new \LogicException('Transactions are not allowed in ClickHouse');
     }
 
     /**
@@ -131,7 +131,7 @@ class ClickHouseConnection implements Connection, PingableConnection, ServerInfo
      */
     public function rollBack()
     {
-        throw new \LogicException('Transactions are not allowed in ClickHouse');
+        // throw new \LogicException('Transactions are not allowed in ClickHouse');
     }
 
     /**
