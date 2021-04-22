@@ -142,6 +142,8 @@ class ClickHousePlatform extends AbstractPlatform
 			'fixedstring' => 'string',
 			'date' => 'date',
 			'datetime' => 'datetime',
+			'datetime64' => 'datetime',
+			'datetime64(6)' => 'datetime',
 
 			'array(int8)' => 'array',
 			'array(int16)' => 'array',
@@ -1419,7 +1421,8 @@ class ClickHousePlatform extends AbstractPlatform
 			{
 				$defaultValue = $field['default'];
 			}
-			elseif ($fieldType === DatableClickHouseType::TYPE_DATE_TIME &&
+			elseif (($fieldType === DatableClickHouseType::TYPE_DATE_TIME ||
+                    $fieldType === DatableClickHouseType::TYPE_DATE_TIME_64) &&
 				$field['default'] === $this->getCurrentTimestampSQL()
 			)
 			{
