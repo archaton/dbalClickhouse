@@ -13,8 +13,9 @@ use Doctrine\Common\Annotations\AnnotationReader;
 
 abstract class ClickHouseTableBase implements \JsonSerializable
 {
+    private const DEFAULT_TREE_STRATEGY = 'MergeTree';
 
-	public static function getTableName()
+    public static function getTableName()
 	{
 		$reader = new AnnotationReader();
 		$reflector = new \ReflectionClass(static::class);
@@ -79,7 +80,7 @@ abstract class ClickHouseTableBase implements \JsonSerializable
 		}
 
 		$newTable->setPrimaryKey($keys);
-		$newTable->addOption('engine', $tableInfo->schema);
+		$newTable->addOption('engine', $tableInfo->options['engine'] ?? self::DEFAULT_TREE_STRATEGY);
 		$newTable->addOption('buffered', $tableInfo->options['buffered'] ?? false);
 		if ($eventDate)
 		{
